@@ -1,0 +1,49 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+h1 a{
+    color: #FFa619;
+    font-family: 'Lobster',sans-serif,'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+}
+a:hover{
+    color: orangered;
+    text-decoration: none;
+}
+#Post{
+
+    background-color: #ff9400;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+#Page_title span{
+    color:white!important;
+}
+#Page_title{
+    text-align: center;
+}
+#main-box{
+    width:80%;
+    margin-left: 10%;
+    margin-top: 4%;
+
+}
+.inbox{
+    width: 20%;
+    height:200px;
+    border: 1px  solid grey;
+    margin: 5px;
+      background: white;
+    box-shadow: 5px 5px 6px grey;
+
+}
+#main-box .inbox{
+    float: left;
+
+}
+
+#short-description {
+    color: seagreen;
+}

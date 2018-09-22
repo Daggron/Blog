@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Abhay's Blog</title>
+    {% load  static %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link  rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-   <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
+   <div id="Post">
+       <h1 id="Page_title"><a href="/"><span>Abhay Sharma's Blog</span></a></h1>
         </div>
 
-        <div>
+        <div  id="main-box">
             {% for post in  posts %}
-                 <p>published: {{ post.published_date }}</p>
-                <h1><a href="">{{ post.post_title }}</a></h1>
-                <h3>{{ post.post_body|linebreaksbr }}</h3>
-
+                <div  id="box">
+                <div class="inbox">
+                 <p id="date">Published: {{ post.published_date }}</p>
+                <h1 id="title"><a href="">{{ post.post_title }}</a></h1>
+                <h3 id="short-description">{{ post.post_body|linebreaksbr }}</h3>
+                </div>
+                </div>
             {% endfor %}
         </div>
 
