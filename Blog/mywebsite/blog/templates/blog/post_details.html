@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+<body>
+{% block heading %}
+   <div id="Post">
+       <h1 id="Page_title"><a href="/"><span>Abhay Sharma's Blog</span></a></h1>
+        </div>
+{% endblock %}
+{% block body %}
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <h1>{{ post.post_title }}</h1>
+        <p>{{ post.post_body|linebreaksbr }}</p>
+    </div>
+{% endblock %}
+</body>

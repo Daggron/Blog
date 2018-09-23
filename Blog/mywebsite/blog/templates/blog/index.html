@@ -1,30 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'blog/base.html' %}
+{% load  static %}
 <head>
-    <meta charset="UTF-8">
-    <title>Abhay's Blog</title>
-    {% load  static %}
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-    <link  rel="stylesheet" href="{% static 'css/style.css' %}">
+<title>
+    {% block title %}
+        Abhay's Blog
+    {% endblock %}
+</title>
+{% block icon %}
+<link rel="shortcut icon"  href="{% static 'images/Darth-Vader.ico' %}">
+{% endblock %}
 </head>
 <body>
+  {% block heading %}
    <div id="Post">
-       <h1 id="Page_title"><a href="/"><span>Abhay Sharma's Blog</span></a></h1>
+       <h1 id="Page_title"><a href="/"><span id="blogt">Abhay Sharma's Blog</span></a></h1>
         </div>
-
+  {% endblock %}
+   {% block body %}
         <div  id="main-box">
             {% for post in  posts %}
                 <div  id="box">
                 <div class="inbox">
                  <p id="date">Published: {{ post.published_date }}</p>
-                <h1 id="title"><a href="">{{ post.post_title }}</a></h1>
+                <h1 id="title"><a href="{% url 'post_details' pk=post.pk%}">{{ post.post_title }}</a></h1>
                 <h3 id="short-description">{{ post.post_body|linebreaksbr }}</h3>
                 </div>
                 </div>
             {% endfor %}
         </div>
+    {% endblock %}
 
 </body>
-</html>
