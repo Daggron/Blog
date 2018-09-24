@@ -1,5 +1,6 @@
 {% extends 'blog/base.html' %}
 {% load  static %}
+
 <head>
 <title>
     {% block title %}
@@ -15,8 +16,11 @@
    <div id="Post">
        <h1 id="Page_title"><a href="/"><span id="blogt">Abhay Sharma's Blog</span></a></h1>
         </div>
+
   {% endblock %}
+
    {% block body %}
+         <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         <div  id="main-box">
             {% for post in  posts %}
                 <div  id="box">
