@@ -5,7 +5,7 @@
     {% endblock %}
 </title>
 {% load static %}
-<link  rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link  rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -26,10 +26,11 @@
                 {{ post.published_date }}
             </div>
         {% endif %}
-         <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk%}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <h1>{{ post.post_title }}</h1>
+         <a class="btn btn-default" id="edit-btn" href="{% url 'post_edit' pk=post.pk%}"><span class="glyphicon glyphicon-pencil"  style="float: right;margin-right: 2%"></span></a>
+        <h1>Title:{{ post.post_title }}</h1>
         <hr>
-        <p id="short-description1">{{ post.post_body|linebreaksbr }}</p>
+         <h3>Short-Description:{{ post.short_description }}</h3><br><hr style="color: #ff9400; opacity: 1">
+        <p id="short-description1">About:{{ post.post_body|linebreaksbr }}</p>
     </div>
     </div>
 {% endblock %}

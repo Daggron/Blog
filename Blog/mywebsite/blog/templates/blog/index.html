@@ -2,6 +2,7 @@
 {% load  static %}
 
 <head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 <title>
     {% block title %}
         Abhay's Blog
@@ -20,14 +21,14 @@
   {% endblock %}
 
    {% block body %}
-         <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+         <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus" style="float: right;margin-right: 2%"></span></a>
         <div  id="main-box">
             {% for post in  posts %}
                 <div  id="box">
                 <div class="inbox">
                  <p id="date">Published: {{ post.published_date }}</p>
                 <h1 id="title"><a href="{% url 'post_details' pk=post.pk%}">{{ post.post_title }}</a></h1>
-                <h3 id="short-description">{{ post.post_body|linebreaksbr }}</h3>
+                <h3 id="short-description">{{ post.short_description|linebreaksbr }}</h3>
                 </div>
                 </div>
             {% endfor %}
